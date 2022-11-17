@@ -113,9 +113,23 @@ int main()
               printf("\n|Add online transaction phone number|");
               printf("\nEnter number:");
               scanf("%d",&trphoneno);
+            
+              amount:
               printf("\nEnter amount:");
               scanf("%d",&tramount);
             
+              if(amount<tramount)
+              {
+                printf("\n₹%d amount not in your account",tramount);
+                printf("\nEnter amount in between %d",amount);
+                goto amount;
+              }
+              else
+              {
+                goto  psok;
+              }
+            
+              psok:
               amount= amount-tramount;
             
               printf("\n₹%d Successfully transfer to %d",tramount,trphoneno);
